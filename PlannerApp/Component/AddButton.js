@@ -21,7 +21,7 @@ export default function AddButton() {
             }),
             Animated.timing(mode, {
                 toValue: mode._value === 0 ? 1 : 0,
-                useNativeDriver: true,
+                useNativeDriver: false,
             })
         ]).start();
     };
@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
         height: 72,
         borderRadius: 36,
         position: 'absolute',
-        top: -65,
+        top: -50,
+        padding: 10,
         shadowColor: '#7F58FF',
         shadowRadius: 5,
         shadowOffset: { height: 10 },

@@ -1,13 +1,12 @@
 
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { NavigationContainer } from '@react-navigation/native';
 
-import { MoreComponentScreen, TimerScreen, ScheduleScreen, HabitScreen } from './Screens/Index';
 import AddButton from './Component/AddButton';
+import MyTabs from './Component/MyTabs';
 
 //creating the bottom navigators -- this will be changed to fit our needs
+/*
 const TabNavigator = createBottomTabNavigator(
   {
     MoreComponent: {
@@ -49,11 +48,16 @@ const TabNavigator = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(TabNavigator);
+//export default createAppContainer(TabNavigator);
+*/
 
-
-
-
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
+  );
+}
 
 
 
