@@ -9,6 +9,7 @@ export default function AddButton() {
 
 
     let handlePress = () => {
+        console.log('+ pressed');
         Animated.sequence([
             Animated.timing(buttonSize, {
                 toValue: 0.95,
@@ -34,6 +35,7 @@ export default function AddButton() {
         outputRange: ['0deg', '45deg']
     });
     //creating the secondary button animation
+    /*
     const dailyButtonX = mode.interpolate({
         inputRange: [0, 1],
         outputRange: [-24, -100]
@@ -58,10 +60,11 @@ export default function AddButton() {
         inputRange: [0, 1],
         outputRange: [-50, -100]
     });
-
+    */
     return (
         //viewing the button
         <View style={{ position: 'absolute', alignItems: 'center' }}>
+            {/*
             <Animated.View style={{ position: 'absolute', left: dailyButtonX, top: dailyButtonY }}>
                 <View style={styles.secondaryButton}>
                     <Text style={{ color: '#FFF' }}>D</Text>
@@ -77,6 +80,7 @@ export default function AddButton() {
                     <Text size={24} color='#FFF'>W</Text>
                 </View>
             </Animated.View>
+            */}
             <Animated.View style={[styles.button, sizeStyle]}>
                 <TouchableHighlight onPress={handlePress} underlayColor='#7F58FF'>
                     <Animated.View style={{ transform: [{ rotate: rotation }] }}>
