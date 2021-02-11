@@ -28,6 +28,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "bottom navigation bar with custom add button"
+    "description": "base model done"
   }
 }

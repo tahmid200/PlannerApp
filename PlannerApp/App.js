@@ -2,69 +2,28 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
+import { MainStackNavigator } from "./Navigation/StackNavigation";
 import AddButton from './Component/AddButton';
-import MyTabs from './Component/MyTabs';
+import MyTabs from './Navigation/MyTabs';
+import DrawerNavigation from './Navigation/DrawerNavigation';
 
-//creating the bottom navigators -- this will be changed to fit our needs
 /*
-const TabNavigator = createBottomTabNavigator(
-  {
-    MoreComponent: {
-      screen: MoreComponentScreen,
-      navigationOptions: {
-        tabBarIcon: () => <FontAwesome5 name='bars' size={24} color='#CDCCCE' />
-      }
-    },
-    Timer: {
-      screen: TimerScreen,
-      navigationOptions: {
-        tabBarIcon: () => <FontAwesome5 name='hourglass' size={24} color='#CDCCCE' />
-      }
-    },
-    //add button goes here due to it being in the middle of the navigation tab
-    Add: {
-      screen: AddButton,
-      navigationOptions: {
-        tabBarIcon: <AddButton />
-      }
-    },
-    Schedule: {
-      screen: ScheduleScreen,
-      navigationOptions: {
-        tabBarIcon: () => <FontAwesome5 name='calendar-alt' size={24} color='#CDCCCE' />
-      }
-    },
-    Habit: {
-      screen: HabitScreen,
-      navigationOptions: {
-        tabBarIcon: () => <FontAwesome5 name='brain' size={24} color='#CDCCCE' />
-      }
-    }
-  },
-  {
-    tabBarOptions: {
-      showLabel: false
-    }
-  }
-);
-
-//export default createAppContainer(TabNavigator);
+colors
+purple: #584375
+white: #ebebeb
+grey: #CDCCCE
+red-purple: #704375
 */
-
-export default function App() {
+const App = () => {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <DrawerNavigation />
     </NavigationContainer>
   );
 }
+export default App;
 
 /*
-import { StyleSheet, Text, View } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import HomePage from './Component/HomePage';
-
-
 //-----------------TEST----------------------------
 export default function App() {
   return (

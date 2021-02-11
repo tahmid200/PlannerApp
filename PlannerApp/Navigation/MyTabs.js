@@ -1,32 +1,33 @@
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
-//import {TouchableOpacity} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import { MoreComponentScreen, TimerScreen, ScheduleScreen, HabitScreen } from '../Screens/Index';
-import AddButton from './AddButton';
-import { TouchableOpacity } from 'react-native';
+import { TimerScreen, HabitScreen } from '../Screens/Index';
+import AddButton from '../Component/AddButton';
+import { TouchableOpacity, StyleSheet } from 'react-native';
+import { HomeStackNavigator, ScheduleStackNavigator } from './StackNavigation';
 
 
 const TabNavigator = createBottomTabNavigator();
 
-export default function MyTabs() {
+const MyTabs = () => {
     return (
         <TabNavigator.Navigator
-            initialRouteName="Homepage"
+            initialRouteName="Home"
             tabBarOptions={{
-                /*activeBackgroundColor: '#e91e63',*/
+                activeTintColor: '#b488db',
+                inactiveTintColor: '#CDCCCE',
                 showLabel: false,
+                style: { backgroundColor: '#584375' },
             }}
         >
             <TabNavigator.Screen
-                name="MoreComponent"
-                component={MoreComponentScreen}
+                name="Home"
+                component={HomeStackNavigator}
                 options={{
                     tabBarIcon: ({ size, color }) => (
-                        <FontAwesome5 name='bars' size={24} color='#CDCCCE' />
+                        <FontAwesome5 name='home' size={24} color={color} />
                     ),
                 }}
             />
@@ -35,7 +36,7 @@ export default function MyTabs() {
                 component={TimerScreen}
                 options={{
                     tabBarIcon: ({ size, color }) => (
-                        <FontAwesome5 name='hourglass' size={24} color='#CDCCCE' />
+                        <FontAwesome5 name='hourglass' size={24} color={color} />
                     ),
                 }}
             />
@@ -44,15 +45,14 @@ export default function MyTabs() {
                 component={TimerScreen}
                 options={{
                     tabBarIcon: () => (<AddButton />),
-
                 }}
             />
             <TabNavigator.Screen
                 name="Schedule"
-                component={ScheduleScreen}
+                component={ScheduleStackNavigator}
                 options={{
                     tabBarIcon: ({ size, color }) => (
-                        <FontAwesome5 name='calendar-alt' size={24} color='#CDCCCE' />
+                        <FontAwesome5 name='calendar-alt' size={24} color={color} />
                     ),
                 }}
             />
@@ -61,7 +61,7 @@ export default function MyTabs() {
                 component={HabitScreen}
                 options={{
                     tabBarIcon: ({ size, color }) => (
-                        <FontAwesome5 name='brain' size={24} color='#CDCCCE' />
+                        <FontAwesome5 name='brain' size={24} color={color} />
                     ),
                 }}
             />
@@ -69,3 +69,11 @@ export default function MyTabs() {
         </TabNavigator.Navigator>
     );
 }
+
+const styles = StyleSheet.create({
+    iconColorChange: {
+        color: 'black',
+    }
+});
+
+export default MyTabs;
