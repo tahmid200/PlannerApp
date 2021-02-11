@@ -82,7 +82,7 @@ export default function AddButton() {
             </Animated.View>
             */}
             <Animated.View style={[styles.button, sizeStyle]}>
-                <TouchableHighlight onPress={handlePress} underlayColor='#7F58FF'>
+                <TouchableHighlight onPress={handlePress} underlayColor='#704375'>
                     <Animated.View style={{ transform: [{ rotate: rotation }] }}>
                         <FontAwesome5 name='plus' size={24} color='#FFF' />
                     </Animated.View>
@@ -95,7 +95,7 @@ export default function AddButton() {
 //the border and the color of the add button
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#7F58FF',
+        backgroundColor: '#704375',
         alignItems: 'center',
         justifyContent: 'center',
         width: 72,
@@ -104,12 +104,12 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: -50,
         padding: 10,
-        shadowColor: '#7F58FF',
+        shadowColor: '#704375',
         shadowRadius: 5,
         shadowOffset: { height: 10 },
         shadowOpacity: 0.3,
         borderWidth: 3,
-        borderColor: '#FFF'
+        borderColor: '#ebebeb'
     },
     //styles of the smaller buttons 
     secondaryButton: {
@@ -119,6 +119,6 @@ const styles = StyleSheet.create({
         width: 48,
         height: 48,
         borderRadius: 24,
-        backgroundColor: '#7F58FF',
+        backgroundColor: '#704375',
     },
 });
