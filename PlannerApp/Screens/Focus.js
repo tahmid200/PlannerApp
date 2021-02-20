@@ -2,10 +2,10 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { color } from "react-native-reanimated";
 
-const Habit = () => {
+const Focus = () => {
     return (
         <View style={styles.center}>
-            <Text style={styles.text}>This is the Habit screen</Text>
+            <Text style={styles.text}>This is the Focus screen</Text>
         </View>
     );
 };
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Habit;
+export default Focus;

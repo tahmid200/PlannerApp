@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ebebeb'
     },
     text: {
-        color: '#ffffff'
+        color: 'black'
     }
 });
 

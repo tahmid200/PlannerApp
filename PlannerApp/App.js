@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { MainStackNavigator } from "./Navigation/StackNavigation";
 import AddButton from './Component/AddButton';
-import MyTabs from './Navigation/MyTabs';
+import HomeTabs from './Navigation/HomeTabs';
 import DrawerNavigation from './Navigation/DrawerNavigation';
 
 /*

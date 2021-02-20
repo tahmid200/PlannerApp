@@ -6,12 +6,12 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { TimerScreen, HabitScreen } from '../Screens/Index';
 import AddButton from '../Component/AddButton';
 import { TouchableOpacity, StyleSheet } from 'react-native';
-import { HomeStackNavigator, ScheduleStackNavigator } from './StackNavigation';
+import { FocusStackNavigator, HabitStackNavigator, HomeStackNavigator, ScheduleStackNavigator } from './StackNavigation';
 
 
 const TabNavigator = createBottomTabNavigator();
 
-const MyTabs = () => {
+const HomeTabs = () => {
     return (
         <TabNavigator.Navigator
             initialRouteName="Home"
@@ -22,29 +22,14 @@ const MyTabs = () => {
                 style: { backgroundColor: '#584375' },
             }}
         >
+
             <TabNavigator.Screen
                 name="Home"
                 component={HomeStackNavigator}
                 options={{
                     tabBarIcon: ({ size, color }) => (
-                        <FontAwesome5 name='home' size={24} color={color} />
+                        <FontAwesome5 name='tasks' size={24} color={color} />
                     ),
-                }}
-            />
-            <TabNavigator.Screen
-                name="Timer"
-                component={TimerScreen}
-                options={{
-                    tabBarIcon: ({ size, color }) => (
-                        <FontAwesome5 name='hourglass' size={24} color={color} />
-                    ),
-                }}
-            />
-            <TabNavigator.Screen
-                name="AddButton"
-                component={TimerScreen}
-                options={{
-                    tabBarIcon: () => (<AddButton />),
                 }}
             />
             <TabNavigator.Screen
@@ -57,8 +42,25 @@ const MyTabs = () => {
                 }}
             />
             <TabNavigator.Screen
-                name="Habit"
+                name="AddButton"
                 component={HabitScreen}
+                options={{
+                    tabBarIcon: () => (<AddButton />),
+                }}
+            />
+
+            <TabNavigator.Screen
+                name="Focus"
+                component={FocusStackNavigator}
+                options={{
+                    tabBarIcon: ({ size, color }) => (
+                        <FontAwesome5 name='bell-slash' size={24} color={color} />
+                    ),
+                }}
+            />
+            <TabNavigator.Screen
+                name="Habit"
+                component={HabitStackNavigator}
                 options={{
                     tabBarIcon: ({ size, color }) => (
                         <FontAwesome5 name='brain' size={24} color={color} />
@@ -76,4 +78,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default MyTabs;
+export default HomeTabs;
