@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableHighlight, Animated } from 'react-native';
-import { FontAwesome5, Feather } from '@expo/vector-icons';
+import React from 'react';
+import { View, StyleSheet, TouchableHighlight, Animated } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
+
 
 export default function AddButton() {
 
@@ -25,6 +26,7 @@ export default function AddButton() {
                 useNativeDriver: false,
             })
         ]).start();
+
     };
     //---------------------
     //scale the button size
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
         width: 72,
         height: 72,
         borderRadius: 36,
-        position: 'absolute',
+        //position: 'absolute',
         top: -50,
         padding: 10,
         shadowColor: '#704375',

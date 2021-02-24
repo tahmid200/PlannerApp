@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen, FocusScreen, ScheduleScreen, HabitScreen } from '../Screens/Index';
+import { HomeScreen, FocusScreen, ScheduleScreen, HabitScreen, AddTaskScreen } from '../Screens/Index';
 import { FontAwesome5 } from '@expo/vector-icons';
 //import DrawerNavigator from './DrawerNavigation';
 import { TouchableOpacity, View } from "react-native";
@@ -46,7 +46,17 @@ const ScheduleStackNavigator = () => {
         </Stack.Navigator>
     );
 }
-
+/*
+const AddTaskStackNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={screenOptionStyle}>
+            <Stack.Screen name="AddTask"
+                component={AddTaskScreen}
+            />
+        </Stack.Navigator>
+    );
+}
+*/
 const HomeStackNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptionStyle}>
