@@ -1,25 +1,17 @@
-import React, { useState } from 'react';
-import { StyleSheet, View } from "react-native";
-import { Text } from 'react-native-elements';
-import Modal from 'react-native-modal';
+import React from 'react';
+import { StyleSheet, View, Platform, TouchableHighlight } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
-import { TouchableHighlight } from 'react-native';
 
-import AddTask from '../Tasks/AddTask';
-import { Platform } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
+//https://github.com/maxs15/react-native-modalbox
 
 export const AddTaskScreenModal = () => {
-    const [modalVisible, setModalVisible] = useState(false);
+
+    const navigation = useNavigation();
     return (
         <>
-            {/*<Button onPress={() => { setModalVisible(true) }}
-                buttonStyle={styles.buttonStyle}
-                icon={
-                    <FontAwesome5 name='plus' size={24} color='#FFF' />
-                } />
-            */}
-            <TouchableHighlight onPress={() => { setModalVisible(true) }}
+            <TouchableHighlight onPress={() => navigation.navigate('AddTask')}
                 activeOpacity='0'
                 underlayColor='#584375'>
                 <View style={styles.buttonStyle}>
@@ -27,25 +19,15 @@ export const AddTaskScreenModal = () => {
                 </View>
             </TouchableHighlight>
             <View style={styles.container}>
-                <Modal
-                    backdropOpacity={0.3}
-                    isVisible={modalVisible}
-                    onBackdropPress={() => setModalVisible(false)}
-                    style={styles.contentView}
-                >
-                    <View style={styles.content}>
-                        <Text style={styles.contentTitle}>Hi 👋!</Text>
-                        <Text>Hello from Overlay!</Text>
-                        <AddTask />
-                    </View>
-                </Modal>
             </View>
+
         </>
     );
 }
 const styles = StyleSheet.create({
     content: {
-        backgroundColor: 'white',
+        flex: 1,
+        backgroundColor: '#ebebeb',
         padding: 22,
         justifyContent: 'center',
         alignItems: 'center',
@@ -57,13 +39,12 @@ const styles = StyleSheet.create({
         marginBottom: 12,
     },
     contentView: {
-        justifyContent: 'flex-end',
+
+        justifyContent: 'flex-start',
         margin: 0,
-
-
-        backgroundColor: 'white',
+        backgroundColor: '#ebebeb',
         marginHorizontal: 0,
-        marginBottom: 50,
+        marginBottom: 0,
         marginTop: Platform.OS === 'ios' ? 14 : 0,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
@@ -71,6 +52,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 50,
         overflow: 'hidden',
     },
+
     buttonStyle: {
         height: 76,
         width: 76,
@@ -79,7 +61,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         top: -27,
         padding: 15,
-        //position: 'absolute',
+        position: 'relative',
         shadowColor: '#704375',
         shadowRadius: 10,
         shadowOffset: { height: 10 },

@@ -1,10 +1,10 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from '@react-navigation/native';
 import { HomeScreen, FocusScreen, ScheduleScreen, HabitScreen, AddTaskScreen } from '../Screens/Index';
 import { FontAwesome5 } from '@expo/vector-icons';
-//import DrawerNavigator from './DrawerNavigation';
 import { TouchableOpacity, View } from "react-native";
-//import { NavigationAction } from 'react-navigation';
+import AddTask from '../Screens/Tasks/AddTask'
 
 //stack navigators will be used for stacking all the bottom tab navigators
 //each bottom tab button will have its own stacks of screens
@@ -46,17 +46,17 @@ const ScheduleStackNavigator = () => {
         </Stack.Navigator>
     );
 }
-/*
+
 const AddTaskStackNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptionStyle}>
             <Stack.Screen name="AddTask"
-                component={AddTaskScreen}
+                component={AddTask}
             />
         </Stack.Navigator>
     );
 }
-*/
+
 const HomeStackNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptionStyle}>
@@ -88,4 +88,4 @@ const FocusStackNavigator = () => {
     );
 }
 
-export { ScheduleStackNavigator, HomeStackNavigator, HabitStackNavigator, FocusStackNavigator };
+export { AddTaskStackNavigator, ScheduleStackNavigator, HomeStackNavigator, HabitStackNavigator, FocusStackNavigator };
