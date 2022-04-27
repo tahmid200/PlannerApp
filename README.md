@@ -1,2 +1,2 @@
 # PlannerApp
-Task tracking and maintaining App using React Native
+Task tracking and maintaining App using Flutter
